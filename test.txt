@@ -1,0 +1,25 @@
+<?php
+     $session_start();
+     //check if our post variable color has been set
+     if(isset($_POST[‘color’]))
+     {
+          $_SESSION[‘color’] = $_POST[‘newcolor’];
+     }else{
+          $_SESSION[‘color’] = “white”;
+     }
+?>
+<html>
+<head>
+<title> Test PHP Page </title>
+</head>
+<body style=”background-color:<?php echo      $_SESSION[‘color’]; ?> >
+<form method=”post” action=”<?php echo   $_SERVER[‘PHP_SELF’]; ?>” >
+     <option name=”newcolor”>
+          <select value=”red”>Red</select>
+          <select value=”green”>Green</select>
+          <select value=”blue”>Blue</select>
+     </option>
+     <input type=”submit” value=”submit” />
+</form>
+</body>
+</html>
